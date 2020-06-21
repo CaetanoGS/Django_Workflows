@@ -1,0 +1,1560 @@
+{
+	"info": {
+		"_postman_id": "f9d8ef8b-2b4d-4c89-becd-9ccf4a3e5e27",
+		"name": "Workflow API",
+		"description": "\n## Workflows\n\n  \n\nThis collection contains sample requests from this [API](https://github.com/CaetanoGS/Django_Workflows)\n\nIt contains the following requests:\n\n\n* GET the list of workflows already created\n\n* GET the specific workflow by ID\n\n* GET the steps already created\n\n* GET the specifc step by ID\n\n* GET the list of commentaries already created\n\n* GET the specific commentary by ID\n\n* POST a worflow\n\n* POST a commentary\n\n* Update a workflow\n\n* Update a step\n\n* Update a commentary\n\n* DELETE a Workflow\n\n* DELETE a Step\n\n* DELETE a commentary",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET workflows lists",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c3989f3a-a161-45f8-8f90-29a0d10bc454",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/workflows/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"workflows",
+						""
+					]
+				},
+				"description": "API endpoint to *Fetch information* for a user in the system\n> A successful API request will return HTTP 200 status"
+			},
+			"response": [
+				{
+					"name": "Get workflows lists",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/workflows/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"workflows",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 21 Jun 2020 11:26:07 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "753"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 5,\n        \"name\": \"How to nail something\",\n        \"description\": \"Basic instructions to nail something\",\n        \"steps\": [\n            {\n                \"wkStep\": 5,\n                \"name\": \"Hit nail\",\n                \"description\": \"Hit the nail repeatedly with a hammer\"\n            }\n        ]\n    },\n    {\n        \"id\": 6,\n        \"name\": \"How to nail something\",\n        \"description\": \"Basic instructions to nail something\",\n        \"steps\": [\n            {\n                \"wkStep\": 6,\n                \"name\": \"Hit nail\",\n                \"description\": \"Hit the nail repeatedly with a hammer\"\n            }\n        ]\n    },\n    {\n        \"id\": 15,\n        \"name\": \"Test\",\n        \"description\": \"Test\",\n        \"steps\": [\n            {\n                \"wkStep\": 15,\n                \"name\": \"Test\",\n                \"description\": \"Hold nail on top the thing to be nailed\"\n            },\n            {\n                \"wkStep\": 15,\n                \"name\": \"Test\",\n                \"description\": \"Test\"\n            }\n        ]\n    },\n    {\n        \"id\": 16,\n        \"name\": \"Test\",\n        \"description\": \"Test\",\n        \"steps\": [\n            {\n                \"wkStep\": 16,\n                \"name\": \"Test\",\n                \"description\": \"Hold nail on top the thing to be nailed\"\n            },\n            {\n                \"wkStep\": 16,\n                \"name\": \"Test\",\n                \"description\": \"Test\"\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GET workflow by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bcbdf1ba-acf9-4de1-a473-24aa48f149d5",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/workflows/5/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"workflows",
+						"5",
+						""
+					]
+				},
+				"description": "API endpoint to *Fetch information* for a user in the system\n> A successful API request will return HTTP 200 status"
+			},
+			"response": [
+				{
+					"name": "GET workflow by ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/workflows/5/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"workflows",
+								"5",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 21 Jun 2020 11:28:09 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "187"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 5,\n    \"name\": \"How to nail something\",\n    \"description\": \"Basic instructions to nail something\",\n    \"steps\": [\n        {\n            \"wkStep\": 5,\n            \"name\": \"Hit nail\",\n            \"description\": \"Hit the nail repeatedly with a hammer\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "GET steps list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a4ee44ef-b681-4843-9670-dad9b66d2338",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/steps/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"steps",
+						""
+					]
+				},
+				"description": "API endpoint to *Fetch information* for a user in the system\n> A successful API request will return HTTP 200 status"
+			},
+			"response": [
+				{
+					"name": "GET steps list",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/steps/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"steps",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 21 Jun 2020 11:31:21 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "437"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"wkStep\": 5,\n        \"name\": \"Hit nail\",\n        \"description\": \"Hit the nail repeatedly with a hammer\"\n    },\n    {\n        \"wkStep\": 6,\n        \"name\": \"Hit nail\",\n        \"description\": \"Hit the nail repeatedly with a hammer\"\n    },\n    {\n        \"wkStep\": 15,\n        \"name\": \"Test\",\n        \"description\": \"Hold nail on top the thing to be nailed\"\n    },\n    {\n        \"wkStep\": 15,\n        \"name\": \"Test\",\n        \"description\": \"Test\"\n    },\n    {\n        \"wkStep\": 16,\n        \"name\": \"Test\",\n        \"description\": \"Hold nail on top the thing to be nailed\"\n    },\n    {\n        \"wkStep\": 16,\n        \"name\": \"Test\",\n        \"description\": \"Test\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GET step by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0885f566-e034-4860-a0ac-ef83f7ad5b3b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/steps/26",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"steps",
+						"26"
+					]
+				},
+				"description": "API endpoint to *Fetch information* for a user in the system\n> A successful API request will return HTTP 200 status"
+			},
+			"response": [
+				{
+					"name": "GET step by ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/steps/26",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"steps",
+								"26"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 21 Jun 2020 11:32:06 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"wkStep\": 15,\n    \"name\": \"Test\",\n    \"description\": \"Test\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET commentaries list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "874a84a2-4bc2-489d-8589-9a2744721ebb",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/commentaries/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"commentaries",
+						""
+					]
+				},
+				"description": "API endpoint to *Fetch information* for a user in the system\n> A successful API request will return HTTP 200 status"
+			},
+			"response": [
+				{
+					"name": "GET commentaries list",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/commentaries/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"commentaries",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 21 Jun 2020 11:34:15 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "221"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"wkID\": 5,\n        \"name\": \"Concerned  person\",\n        \"text\": \"On the step 'Hit Nail' be careful to not hit your hand!\"\n    },\n    {\n        \"wkID\": 6,\n        \"name\": \"Concerned  person CHANGED *****\",\n        \"text\": \"On the step 'Hit Nail' be careful to not hit your hand!\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GET commentary by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5a119cf5-9f02-4cf0-b1e5-0f2555bca765",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/commentaries/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"commentaries",
+						"3"
+					]
+				},
+				"description": "API endpoint to *Fetch information* for a user in the system\n> A successful API request will return HTTP 200 status"
+			},
+			"response": [
+				{
+					"name": "GET commentary by ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/commentaries/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"commentaries",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 21 Jun 2020 11:35:10 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "116"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"wkID\": 6,\n    \"name\": \"Concerned  person CHANGED *****\",\n    \"text\": \"On the step 'Hit Nail' be careful to not hit your hand!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Registering a workflow",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "042f9620-33af-49d5-8767-56b0b18fe17e",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Test\",\n    \"description\": \"Test\",\n    \"steps\": [\n      {\n         \"name\": \"Test\",\n         \"description\": \"Hold nail on top the thing to be nailed\"\n      },\n      {\n        \"name\": \"Test\",\n        \"description\": \"Test\"\n      }   \n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/workflows/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"workflows",
+						""
+					]
+				},
+				"description": "API endpoint to *Register* a workflow in the system\n> A successful registration will result in a *HTTP 201/202* Status Code."
+			},
+			"response": [
+				{
+					"name": "POST workflow",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Test\",\n    \"description\": \"Test\",\n    \"steps\": [\n      {\n         \"name\": \"Test\",\n         \"description\": \"Hold nail on top the thing to be nailed\"\n      },\n      {\n        \"name\": \"Test\",\n        \"description\": \"Test\"\n      }   \n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/workflows/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"workflows",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 21 Jun 2020 11:38:26 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "187"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 17,\n    \"name\": \"Test\",\n    \"description\": \"Test\",\n    \"steps\": [\n        {\n            \"wkStep\": 17,\n            \"name\": \"Test\",\n            \"description\": \"Hold nail on top the thing to be nailed\"\n        },\n        {\n            \"wkStep\": 17,\n            \"name\": \"Test\",\n            \"description\": \"Test\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Registering a commentary",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "591a06f2-18c6-4d97-93c9-616981538340",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"wkID\": 15,\n        \"name\": \"Test\",\n        \"text\": \"Test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/commentaries/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"commentaries",
+						""
+					]
+				},
+				"description": "API endpoint to *Register* a workflow in the system\n> A successful registration will result in a *HTTP 201/202* Status Code."
+			},
+			"response": [
+				{
+					"name": "POST commentary",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"wkID\": 15,\n        \"name\": \"Test\",\n        \"text\": \"Test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/commentaries/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"commentaries",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 21 Jun 2020 11:41:10 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"wkID\": 15,\n    \"name\": \"Test\",\n    \"text\": \"Test\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Updating workflow",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5b600512-3da1-4493-86b9-6dc748dd317e",
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": 17,\n        \"name\": \"CHANGED\",\n        \"description\": \"Test CHANGED\",\n        \"steps\": [\n            {\n                \"wkStep\": 17,\n                \"name\": \"Test\",\n                \"description\": \"Hold nail on top the thing to be nailed\"\n            },\n            {\n                \"wkStep\": 17,\n                \"name\": \"Test\",\n                \"description\": \"Test CHANGED\"\n            }\n        ]\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/workflows/17/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"workflows",
+						"17",
+						""
+					]
+				},
+				"description": "API endpoint to *Update information* of a specific workflow\n> A successful API request will return HTTP 200 status"
+			},
+			"response": [
+				{
+					"name": "Updating workflow",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": 17,\n        \"name\": \"CHANGED\",\n        \"description\": \"Test CHANGED\",\n        \"steps\": [\n            {\n                \"wkStep\": 17,\n                \"name\": \"Test\",\n                \"description\": \"Hold nail on top the thing to be nailed\"\n            },\n            {\n                \"wkStep\": 17,\n                \"name\": \"Test\",\n                \"description\": \"Test CHANGED\"\n            }\n        ]\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/workflows/17/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"workflows",
+								"17",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 21 Jun 2020 11:46:11 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "206"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 17,\n    \"name\": \"CHANGED\",\n    \"description\": \"Test CHANGED\",\n    \"steps\": [\n        {\n            \"wkStep\": 17,\n            \"name\": \"Test\",\n            \"description\": \"Hold nail on top the thing to be nailed\"\n        },\n        {\n            \"wkStep\": 17,\n            \"name\": \"Test\",\n            \"description\": \"Test CHANGED\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Updating step",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "43437a4b-135a-414f-a1e4-5848f5834ead",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"wkStep\": 15,\n    \"name\": \"Test CHANGED\",\n    \"description\": \"Test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/steps/26/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"steps",
+						"26",
+						""
+					]
+				},
+				"description": "API endpoint to *Update information* of a specific step\n> A successful API request will return HTTP 200 status"
+			},
+			"response": [
+				{
+					"name": "Updating step",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"wkStep\": 15,\n    \"name\": \"Test CHANGED\",\n    \"description\": \"Test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/steps/26/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"steps",
+								"26",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 21 Jun 2020 11:50:32 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "56"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"wkStep\": 15,\n    \"name\": \"Test CHANGED\",\n    \"description\": \"Test\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Updating commentary",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ad3ed7b5-19da-491d-98ba-b4d970089a46",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"wkID\": 6,\n    \"name\": \"CHANGED NAME\",\n    \"text\": \"On the step 'Hit Nail' be careful to not hit your hand!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/commentaries/3/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"commentaries",
+						"3",
+						""
+					]
+				},
+				"description": "API endpoint to *Update information* of a specific commentary\n> A successful API request will return HTTP 200 status"
+			},
+			"response": [
+				{
+					"name": "Updating commentary",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"wkID\": 6,\n    \"name\": \"CHANGED NAME\",\n    \"text\": \"On the step 'Hit Nail' be careful to not hit your hand!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/commentaries/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"commentaries",
+								"3",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 21 Jun 2020 11:54:04 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "97"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"wkID\": 6,\n    \"name\": \"CHANGED NAME\",\n    \"text\": \"On the step 'Hit Nail' be careful to not hit your hand!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Deleting a Step",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f9f8aa0b-3103-4901-8b9a-856e781b4bb2",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/steps/26/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"steps",
+						"26",
+						""
+					]
+				},
+				"description": "API endpoint to *Delete an information* of a specific step\n> A successful API request will return HTTP 204 status"
+			},
+			"response": [
+				{
+					"name": "Deleting a Step",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/steps/26/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"steps",
+								"26",
+								""
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 21 Jun 2020 11:59:38 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Deleting a commentary",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d4827659-d359-4d89-8de3-e943542da81a",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/commentaries/10/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"commentaries",
+						"10",
+						""
+					]
+				},
+				"description": "API endpoint to *Delete an information* of a specific commentary\n> A successful API request will return HTTP 204 status"
+			},
+			"response": [
+				{
+					"name": "Deleting a commentary",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/commentaries/10/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"commentaries",
+								"10",
+								""
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 21 Jun 2020 12:05:07 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Deleting a workflow",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0beb8707-0d27-4642-9f44-ba5792b4692e",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/workflows/15/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"workflows",
+						"15",
+						""
+					]
+				},
+				"description": "API endpoint to *Delete an information* of a specific workflow\n> A successful API request will return HTTP 204 status"
+			},
+			"response": [
+				{
+					"name": "Deleting a workflow",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/workflows/15/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"workflows",
+								"15",
+								""
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 21 Jun 2020 12:06:03 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d87e6aa7-1bcb-4cb2-8854-96c30c320801",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "ea224bd4-353f-43c0-848d-e22486592820",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
