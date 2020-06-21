@@ -50,13 +50,24 @@ $ python3 manage.py runserver -- and it will start the server on http://127.0.0.
 ```
 
 ## URLS
-
-> http://127.0.0.1:8000/workflows -- Returns the workflows list
-> http://127.0.0.1:8000/workflows/< id > / -- Returns a specific workflow
-> http://127.0.0.1:8000/steps/ -- Returns the steps list
-> http://127.0.0.1:8000/steps/< id > / -- Returns a specific step
-> http://127.0.0.1:8000/commentaries/ -- Returns the commentaries list
-> http://127.0.0.1:8000/commentaries/< id > / -- Returns a specific commentary
+```
+http://127.0.0.1:8000/workflows -- Returns the workflows list
+```
+```
+http://127.0.0.1:8000/workflows/< id > / -- Returns a specific workflow
+```
+```
+http://127.0.0.1:8000/steps/ -- Returns the steps list
+```
+```
+http://127.0.0.1:8000/steps/< id > / -- Returns a specific step
+```
+```
+http://127.0.0.1:8000/commentaries/ -- Returns the commentaries list
+```
+```
+http://127.0.0.1:8000/commentaries/< id > / -- Returns a specific commentary
+```
 
 ## Tests
 
