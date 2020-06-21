@@ -1,54 +1,47 @@
-# Workflows
+# Django Rest Framework API
 
-Your are tasked with creating a simple version of an HTTP API for a workflow system. The important entities are *workflow* and
-*comment*.
+## About this Project
 
-A *workflow* is a series of ordered steps to be followed in order to achieve a result. It has a name,
-a description and a set of ordered steps. A step has a name and a description.
- 
-A *comment* is a message left by someone about a workflow. A comment has the name of the person who posted and the
-text of the comment.
+This is a REST API using Django Rest Framework, where the user can creates workflows and adding steps and commentaries into it. Below, you can find some requisites to run the projects and some information about the development.
 
-The API should allow for retrieving, listing, creating, updating and deleting workflows and comments. The order of the
-steps is important and should be preserved.
+## Installers
 
-An example of a json to create a workflow would be:
+If you want to test the project, the installers are listed below:
 
-```json
-{
-    "name": "How to nail something",
-    "description": "Basic instructions to nail something",
-    "steps": [
-      {
-         "name": "Place nail",
-         "description": "Hold nail on top the thing to be nailed"
-      },
-      {
-        "name": "Hit nail",
-        "description": "Hit the nail repeatedly with a hammer"
-      }   
-    ]
-}
-``` 
+[Django](https://www.djangoproject.com)
+[Django Restframework](https://www.django-rest-framework.org)
 
-An example of a json to create a comment of a workflow would be:
 
-```json
-{
-  "name": "Concerned  person",
-  "text": "On the step 'Hit Nail' be careful to not hit your hand!"
-}
+## Functionalities
+
+- Create workflows, steps, commentaries.
+- Get workflow, worflows lists, step, steps list, commentary and commentaries list.
+
+## Getting Started
+
+### Prerequisites
+
+To run this project in the development mode, you'll need to have a basic environment to run a Python, that can be found [here](https://code.visualstudio.com/download).
+
+### Installing
+
+**Cloning the Repository**
+
+```
+$ git clone https://github.com/CaetanoGS/Django_Workflows
+
+$ cd mysite/
 ```
 
-Use Django (https://www.djang oproject.com) and Django Rest Framework (https://www.django-rest-framework.org/), you can use any database you would like.
-Clean code and code organization and unit tests are important.
 
-Provide also an Open API 3 (https://github.com/OAI/OpenAPI-Specification/blob/3.0.3/versions/3.0.0.md) spec for the API.
 
-You should deliver a git repository with your code, and a short README file explaining how to build, run and use it.
+### Running
 
-Some useful links:
- * A guide for Django in Visual Studio Code https://code.visualstudio.com/docs/python/tutorial-django
- * A python IDE https://www.jetbrains.com/pycharm/download/
+With all dependencies installed and the environment properly configured, you can now run the app:
 
-Feel free to contact us about question regarding the project.
+
+```
+$ python3 manage.py runserver -- and it will open the expo and you can simulate the app on your device.
+```
+
+## Tests
