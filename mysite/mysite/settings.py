@@ -30,6 +30,8 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'testserver']
 
 # Application definition
 
+#Adding the Django rest framework library and myAPI
+
 INSTALLED_APPS = [
     'myapi.apps.MyapiConfig',
     'django.contrib.admin',

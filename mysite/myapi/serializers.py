@@ -22,6 +22,9 @@ class WorkFlowSerializer(serializers.ModelSerializer):
         model = WorkFlow
         fields = ('id', 'name', 'description', 'steps')
 
+    # Functions to able the creating and updating of data
+    # Based on https://www.django-rest-framework.org 
+
     def create(self, validated_data):
         steps_data = validated_data.pop('steps')
         workflows = WorkFlow.objects.create(**validated_data)
