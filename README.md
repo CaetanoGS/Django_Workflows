@@ -1,8 +1,7 @@
 # Django Rest Framework API
 
 ![Workflows list](https://user-images.githubusercontent.com/50907344/85225915-b1769a00-b3d4-11ea-8914-33d43cdc54cf.png)
-![Steps List](https://user-images.githubusercontent.com/50907344/85225929-ce12d200-b3d4-11ea-8e4d-b78cbb4804b5.png)
-![Commentaries list](https://user-images.githubusercontent.com/50907344/85225947-ed116400-b3d4-11ea-8895-432e78a9b2fb.png)
+
 
 ## About this Project
 
